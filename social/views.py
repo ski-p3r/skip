@@ -6,21 +6,21 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from accounts.models import Account
 from django.http import HttpResponse
+from friend.models import Friend
 
 @login_required(login_url = 'login')
 def home(request):
-    post = Post.objects.all()
+    post = Post.objects.all().order_by('-created_date')
     user = request.user
-    try:
-        profile = Profile.objects.get(user=user)
-        context = {
-            'post': post,
-            'profile': profile,
-        }
-    except:
-        context = {
-            'post': post,
-        }
+    profile = Profile.objects.get(user=user)
+    friend_request = Friend.objects.filter(added=profile, is_approved=False)#.order_by('-date_added')
+    confirmed_friends = Friend.objects.filter((Q(added=profile) | Q(adder=profile)) & Q(is_approved=True))#.order_by('-date_added')
+    context = {
+        'post': post,
+        'friend_request': friend_request,
+        'confirmed_friends': confirmed_friends,
+        'profile': profile,
+    }
     return render(request, 'index.html', context)
 
 @login_required(login_url = 'login')

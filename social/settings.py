@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'accounts',
     'settings',
     'post',
+    'friend',
+    'group',
     'contact',
+    'message',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +145,6 @@ MESSAGE_TAGS = {
 # SMTP configuration
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = '<Your Email Address>'
+EMAIL_HOST_USER = '<Your Email>'
 EMAIL_HOST_PASSWORD = '<Your Password>'
 EMAIL_USE_TLS = True

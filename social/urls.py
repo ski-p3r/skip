@@ -29,6 +29,9 @@ urlpatterns = [
     path('post/', include('post.urls')),
     path('settings/', include('settings.urls')),
     path('edit/', include('contact.urls')),
+    path('message/', include('message.urls')),
+    path('friend/', include('friend.urls')),
+    path('group/', include('group.urls')),
     path('search/', views.search, name='search'),
 ]
 if settings.DEBUG:

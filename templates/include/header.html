@@ -15,7 +15,7 @@
             </form>
             <a href="{% url 'home' %}" class="p-2 text-center ms-3 menu-icon center-menu-icon"><i class="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i></a>
             
-            <a href="#" class="p-2 text-center ms-auto menu-icon"><i class="feather-message-square font-xl text-current"></i></a>  
+            <a href="{% url 'message' %}" class="p-2 text-center ms-auto menu-icon"><i class="feather-message-square font-xl text-current"></i></a>  
             <div class="p-2 text-center ms-3 position-relative dropdown-menu-icon menu-icon cursor-pointer">
                 <i class="feather-settings animation-spin d-inline-block font-xl text-current"></i>
                 <div class="dropdown-menu-settings switchcolor-wrap">
@@ -137,6 +137,7 @@
                         <ul class="mb-1 top-content">
                             <li class="logo d-none d-xl-block d-lg-block"></li>
                             <li><a href="{% url 'home' %}" class="nav-content-bttn open-font"><i class="feather-tv btn-round-md bg-blue-gradiant me-3"></i><span>Newsfeed</span></a></li>
+                            <li><a href="{% url 'group' %}" class="nav-content-bttn open-font" ><i class="feather-zap btn-round-md bg-mini-gradiant me-3"></i><span>Popular Groups</span></a></li>
                             <li><a href="{% url 'author' %}" class="nav-content-bttn open-font"><i class="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>Author Profile </span></a></li>                        
                         </ul>
                     </div>
